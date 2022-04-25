@@ -8,7 +8,7 @@ class ClientsController < ApplicationController
         if client
             render json: client
         else
-            byebug
+         
            client = Client.find_by(id: params[:id])
             render json: {error: client.error.full_messages}, status: :not_found
         end

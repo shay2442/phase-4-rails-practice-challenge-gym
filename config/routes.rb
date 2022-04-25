@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tests
   resources :memberships, only: [:index, :show, :create, :destroy]
   resources :clients
   resources :gyms

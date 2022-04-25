@@ -1,5 +1,10 @@
 class GymsController < ApplicationController
 
+    def index
+        gyms = Gym.all
+        render json: gyms, :except => [:created_at, :updated_at], methods: [:summary]
+    end
+
     def show 
         gym = Gym.find_by(:id => params[:id])
         if gym
